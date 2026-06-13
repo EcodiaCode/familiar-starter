@@ -9,8 +9,8 @@ Writes a sidecar file the next UserPromptSubmit hook can surface so Familiar see
 the feedback in the next turn and self-corrects without you having to flag it.
 
 Pure-Python stdlib only. Reads the locked voice profile from
-<PERSONA_HOME>/voice/profile.md and the banned-vocab list from
-<PERSONA_HOME>/voice/banned-vocab.md.
+voice/profile.md (relative to the pack folder) and the banned-vocab list from
+voice/banned-vocab.md.
 
 When the voice profile is not yet locked (pre-extraction), the hook still
 catches the universal bans: em-dashes and AI-assistant register.
@@ -21,7 +21,7 @@ import os
 import sys
 from pathlib import Path
 
-PERSONA_HOME = Path(os.environ.get("PERSONA_HOME", str(Path.home() / "familiar")))
+PERSONA_HOME = Path(os.environ.get("PERSONA_HOME", str(Path.home() / "Familiar")))
 SIDECAR_PATH = PERSONA_HOME / ".claude" / ".voice-score-sidecar"
 
 # Universal bans, apply even before voice profile is locked

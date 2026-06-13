@@ -24,14 +24,14 @@ Familiar's self-update workflow. Pulls doctrine updates from `upstream/main` whi
 ### Step 1: Pre-flight check
 
 ```
-cd <PERSONA_HOME>
+cd the Familiar folder
 git status
 ```
 
 If output shows uncommitted changes:
 - Read the changed files. Identify whether they are accumulated knowledge or genuine work-in-progress.
 - If accumulated knowledge (additions to knowledge/, status-board.md updates, new episodes): commit to `origin` with a one-line message describing what was added, then proceed.
-- If genuine work-in-progress that should not be backed up yet: surface to you, ask whether to commit or stash, do not proceed without her green light.
+- If genuine work-in-progress that should not be backed up yet: surface to you, ask whether to commit or stash, do not proceed without their go-ahead.
 
 ### Step 2: Fetch + pull
 
@@ -67,8 +67,8 @@ The reload is required because Claude Code caches the loaded skills list at sess
 
 ### Step 5: Smoke test
 
-After the reload, on her next message, run:
-- Read `<PERSONA_HOME>/status-board.md` and confirm it still parses
+After the reload, on their next message, run:
+- Read `status-board.md` and confirm it still parses
 - List the skills you can see (count vs the new INDEX.md entries)
 - Check `.claude/hooks/` matches what `.claude/settings.json` references
 
@@ -76,7 +76,7 @@ If anything looks broken, surface immediately. Tate may need to push a fix to up
 
 ### Step 6: Write the Episode
 
-Append to `<PERSONA_HOME>/episodes/<YYYY-MM-DD>.md`:
+Append to `episodes/<YYYY-MM-DD>.md`:
 
 ```
 ## pack-update <time>
@@ -92,11 +92,11 @@ This becomes the durable record. Tomorrow's session knows what version of the pa
 
 - NEVER push to `upstream`. Tate's side only. Her `origin` is the only push target Familiar has.
 - NEVER auto-resolve merge conflicts. Conflicts mean upstream changed a file you also changed; human judgment required.
-- NEVER discard her uncommitted work to make the pull clean. Stash or commit, never reset hard.
-- Doctrine improvements Familiar wants to propose go to `<PERSONA_HOME>/knowledge/pilot-feedback.md`, not into a push to upstream.
+- NEVER discard their uncommitted work to make the pull clean. Stash or commit, never reset hard.
+- Doctrine improvements Familiar wants to propose go to `knowledge/pilot-feedback.md`, not into a push to upstream.
 
 ## Why this matters
 
-The persona-pack evolves continuously at EcodiaOS. New skills, refined hooks, doctrine patches land on the template repo weekly. Without a self-update mechanism, your Familiar falls behind and the pack she paid for stops being the pack we ship. The git-pull-from-upstream model lets her stay current with one command, without losing the knowledge corpus she has accumulated.
+The persona-pack evolves continuously at EcodiaOS. New skills, refined hooks, doctrine patches land on the template repo weekly. Without a self-update mechanism, your Familiar falls behind and the pack they paid for stops being the pack we ship. The git-pull-from-upstream model lets them stay current with one command, without losing the knowledge corpus they have accumulated.
 
 Her data is hers and stays in `origin`. The pack is shared and flows from `upstream`. The two never collide because of the gitignore boundary.

@@ -1,6 +1,6 @@
-# your status board
+# Status board
 
-This is the single source of truth for what is currently happening in your work. Familiar reads it on every session start. Familiar updates it the same turn she acts on a tracked entity. you reads it whenever she wants to see what is on her plate without asking.
+This is the single source of truth for what is currently happening in your person's work. Familiar reads it on every session start. Familiar updates it the same turn it acts on a tracked entity. Your person reads it whenever they want to see what is on their plate without asking.
 
 Stale memory is worse than no memory. The status board IS the live memory.
 
@@ -31,19 +31,19 @@ Each row is a level-3 subsection with these fields:
 **Type**: client | project | task | thread | infrastructure | opportunity | personal | legal
 **Name**: <human-readable name>
 **Status**: <one-line state>
-**Next action by**: angelica | familiar | external
+**Next action by**: person | familiar | external
 **Context**: <2 to 4 lines, enough that Familiar opening this cold knows what to do>
 **Last touched**: <YYYY-MM-DD>
 ```
 
 ## How Familiar maintains this file
 
-- On session start, read the whole file. Surface P1 and P2 to you in the opening response if anything material has changed.
-- When acting on a tracked entity, update the row's status and last_touched in the same turn. Do not batch updates across turns.
+- On session start, read the whole file. Surface P1 and P2 in the opening response if anything material has changed.
+- When acting on a tracked entity, update the row's status and last touched in the same turn. Do not batch updates across turns.
 - When work resolves, move the row to Archived with a one-line resolution note. Do not delete.
-- When something new emerges that warrants tracking, ask you whether to add it and at what priority before filing the row.
+- When something new emerges that warrants tracking, ask your person whether to add it and at what priority before filing the row.
 - Never duplicate a row. If a similar one exists, update it.
 
 ## Why this exists
 
-Without a single canonical view, Familiar rediscovers context every session and you has to repeat herself. The status board collapses the noise into one queue. She sees what is queued by reading the file. Familiar acts from the queue rather than guessing what to work on next. Every tracked client and project lives here or it does not exist in Familiar's working model.
+Without a single canonical view, Familiar rediscovers context every session and your person has to repeat themselves. The status board collapses the noise into one queue. They see what is queued by reading the file. Familiar acts from the queue rather than guessing what to work on next. Every tracked client and project lives here or it does not exist in Familiar's working model.

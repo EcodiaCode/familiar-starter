@@ -5,7 +5,7 @@ description: Drive Chrome via the Chrome DevTools Protocol when a web surface ha
 
 # cdp-usage
 
-CDP is how Familiar acts on web surfaces with no programmable API. Drives your logged-in Chrome session directly, using her saved sessions and cookies.
+CDP is how Familiar acts on web surfaces with no programmable API. Drives your person's logged-in Chrome session directly, using their saved sessions and cookies. Only with their standing permission, and never on money-moving or external-facing final clicks without check-in.
 
 ## When to use
 
@@ -22,10 +22,10 @@ CDP is how Familiar acts on web surfaces with no programmable API. Drives your l
 
 Chrome must be started with `--remote-debugging-port=9222 --user-data-dir=<explicit-path>`. The user-data-dir is NOT optional. Chrome 121+ silently drops --remote-debugging-port without an explicit user-data-dir, leaving port 9222 unbound while the command appears to succeed.
 
-For your Mac, the helper is at `<PERSONA_HOME>/familiar-core/cdp/enable.sh`. It:
-1. Kills any existing Chrome process (singleton-clear)
-2. Restarts Chrome with the right flags + her default user-data-dir so saved sessions survive
-3. Verifies port 9222 is listening before returning
+The attach sequence:
+1. Kill any existing Chrome process (singleton-clear), after warning your person and getting a clear moment
+2. Restart Chrome with the right flags + their default user-data-dir so saved sessions survive
+3. Verify port 9222 is listening before driving
 
 ## Helper primitives Familiar has
 
@@ -42,8 +42,8 @@ For your Mac, the helper is at `<PERSONA_HOME>/familiar-core/cdp/enable.sh`. It:
 - **Iframe descent**: cdp.nativeFill descends into same-origin iframes automatically. Cross-origin iframes need explicit target switching via cdp.attach_tab.
 - **Modal vs page save**: clickByTag('Save') in a modal context can grab the OUTER page's save-draft button. Verify the click registered inside the modal by checking the modal close state or by selector-scoping.
 - **Singleton clear**: if Chrome was already running when Familiar tries to attach, the new --remote-debugging-port flag is silently dropped. The enable.sh script handles this by killing first.
-- **Focus steal banned**: do not activate Chrome or steal focus from your active window. Drive in background, never raise the window. If you must screenshot, do not bring Chrome to foreground.
-- **Tab focus collision**: if you is interacting with Chrome at the same time, batch your operations into one burst rather than spreading them across her interaction window.
+- **Focus steal banned**: do not activate Chrome or steal focus from your person's active window. Drive in background, never raise the window. If you must screenshot, do not bring Chrome to foreground.
+- **Tab focus collision**: if your person is using Chrome at the same time, batch your operations into one burst rather than spreading them across their working window.
 
 ## Verification
 
@@ -51,13 +51,13 @@ Every CDP sequence ends with a discriminating probe: a CDP screenshot of the res
 
 ## Adding new recipes
 
-When Familiar figures out a new browser-only workflow, capture it to `<PERSONA_HOME>/knowledge/cdp-recipes/<recipe-slug>.md` with:
+When Familiar figures out a new browser-only workflow, capture it to `knowledge/cdp-recipes/<recipe-slug>.md` with:
 - The target surface and URL pattern
 - The step sequence (selector + action per step)
 - Known gotchas
 - The verify step
 
-The recipe corpus accumulates her institutional knowledge for CDP work. Next time the same surface comes up, read the recipe before driving.
+The recipe corpus accumulates institutional knowledge for CDP work. Next time the same surface comes up, read the recipe before driving.
 
 ## Cross-references (deeper doctrine, optional reading)
 
