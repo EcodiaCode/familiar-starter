@@ -1,4 +1,4 @@
-# Customer-generated state. Lives in `origin` (her private repo) only.
+# Customer-generated state. Lives in `origin` (the customer's private repo) only.
 # Never tracked by the shared `upstream` template.
 
 # Credentials - never committed, ever, anywhere
@@ -8,9 +8,9 @@
 *-credentials.json
 google-sa.json
 
-# Customer's accumulated knowledge corpus (her live, growing state)
+# Customer's accumulated knowledge corpus (the live, growing state)
 # These are populated by Familiar during bootstrap and through ongoing work.
-# They get committed to her private `origin` repo for backup but never to `upstream`.
+# They get committed to the private `origin` repo for backup but never to `upstream`.
 knowledge/about-*.md
 knowledge/persona-voice.md
 knowledge/weekly-shape.md
