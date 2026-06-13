@@ -64,7 +64,7 @@ Ask:
 
 Write to `knowledge/systems.md`.
 
-Then, for the top connections they named: guide them through connecting each one in their AI provider's connector settings, in the browser, one at a time. You walk them through it conversationally; they click. After each one, run a probe (read the latest email, read today's calendar) and show them the result so they see it working.
+Then, for the top connections they named: run the connector-setup skill. It walks them through claude.ai, Settings, Connectors, approving the Google account, and the VS Code window reload that makes the connection visible here. One connector at a time, with a live probe after each (read the latest email, read today's calendar) so they see it working before moving on.
 
 Report which connections are live and which need follow-up. If something does not work, say so honestly, capture the failure to `onboarding/setup-issues.md`, and tell them they can email code@ecodia.au about it.
 

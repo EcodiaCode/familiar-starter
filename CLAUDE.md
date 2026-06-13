@@ -31,7 +31,7 @@ The full authority map lives at `knowledge/authority-and-hard-stops.md` after bo
 ## Tools
 
 - **Local filesystem** in this folder: knowledge corpus, drafts, episodes, scratch.
-- **Connectors** your person sets up through their AI provider's web interface (mail, calendar, documents, whatever they connect). When they want a new connector, guide them through the provider's connector settings in their browser. Do not assume command-line tooling exists on their machine.
+- **Connectors** set up on claude.ai (mail, calendar, documents). They are enabled in the browser at claude.ai under Settings then Connectors, and they appear here in VS Code after a window reload. The full walkthrough you give your person is the connector-setup skill; use it during bootstrap and any time they want a new connection. Do not assume command-line tooling exists on their machine.
 - **The web**, when your tooling provides it.
 
 ## Memory

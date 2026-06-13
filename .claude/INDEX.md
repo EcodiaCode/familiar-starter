@@ -1,47 +1,41 @@
-# Familiar `.claude/` bundle v1 - scope + ship state
+# Familiar `.claude/` bundle - what is in here
 
-This is Familiar's project-scoped skills + hooks substrate. Mirrors EcodiaOS's own `.claude/` shape, scaled down for a single-principal EA pack. Lives at `.claude/` and gets discovered the moment you opens the folder in VSCode.
+This is Familiar's project-scoped skills and hooks substrate. It mirrors the shape EcodiaOS runs on itself, scaled for a single-person assistant pack. Claude Code discovers it the moment the Familiar folder opens in VS Code.
 
-## Skills planned (11)
+## Skills (10 shipped)
 
-| skill                  | status      | purpose                                                       |
-|------------------------|-------------|---------------------------------------------------------------|
-| pattern-codify         | shipped v1  | file durable rules when you states one                   |
-| cdp-usage              | shipped v1  | drive Chrome via CDP for browser-only surfaces                |
-| status-board-update    | shipped v1  | maintain status-board.md as single source of truth            |
-| voice-drift-correct    | planned     | periodic check of recent outbound vs locked voice profile     |
-| inbox-triage           | planned     | sort morning Gmail by Familiar heuristics + flag what needs eyes  |
-| outbound-draft         | planned     | draft outbound mail with recipient + voice + spend gates      |
-| client-prep            | planned     | CRM + recent thread + calendar to one-page brief              |
-| memory-write           | planned     | structured writes to their knowledge corpus                     |
-| routine-add            | planned     | schedule new claude.ai Routines from chat                     |
-| graphic-generate       | planned     | brand graphics in their voice                                   |
-| outbound-mail-gate     | planned     | composite check on recipient + voice + topic before send      |
+| skill               | purpose                                                                |
+|---------------------|------------------------------------------------------------------------|
+| connector-setup     | walk your person through claude.ai connectors (mail, calendar, drive)  |
+| daily-brief         | open the day: status board + calendar + inbox in one tight message     |
+| email-triage        | sort the inbox: needs-them / drafted / noise, never send unapproved    |
+| voice-capture       | collect writing samples, build and maintain the voice profile          |
+| weekly-review       | sweep the board weekly, name what moved, set next week                 |
+| self-improve        | capture friction, codify learnings, feed pack gaps upstream            |
+| pattern-codify      | file durable rules the moment your person states one                   |
+| status-board-update | maintain status-board.md as the single source of truth                 |
+| pack-update         | pull upstream improvements safely, never touching their files          |
+| cdp-usage           | drive Chrome for browser-only surfaces, with standing permission       |
 
-## Hooks planned (7)
+## Hooks (4 shipped, registered in settings.json)
 
-| hook                       | status      | purpose                                                |
-|----------------------------|-------------|--------------------------------------------------------|
-| voice-score-outbound       | shipped v1  | PostToolUse, score outbound drafts vs voice profile    |
-| session-start-surface      | planned     | SessionStart, surface P1/P2 + cal + inbox flags        |
-| knowledge-corpus-surface   | planned     | UserPromptSubmit, surface relevant corpus slice        |
-| outbound-mail-gate         | planned     | PreToolUse on gmail_send, recipient + voice + topics   |
-| spend-cap-gate             | planned     | PreToolUse on spend-bearing ops, dollar threshold check|
-| end-of-session-episode     | planned     | Stop, write episodes/<date>.md if session substantive  |
-| pre-compact-checkpoint     | planned     | PreCompact, defensive episode before context compress  |
+| hook                   | event                      | purpose                                            |
+|------------------------|----------------------------|----------------------------------------------------|
+| session-start-surface  | SessionStart               | surface P1/P2 + today's calendar + inbox flags     |
+| outbound-mail-gate     | PreToolUse on mail send    | recipient + voice + hard-stop check before send    |
+| voice-score-outbound   | PostToolUse on Write/Edit  | score outbound drafts against the voice profile    |
+| end-of-session-episode | Stop                       | write episodes/<date>.md when a session mattered   |
 
 ## Authoring conventions
 
-- **Skills**: SKILL.md frontmatter + markdown body. Frontmatter: `name`, `description`. Optional: `allowed-tools`.
-- **Hooks**: pure-Python stdlib only. No venv on the customer Mac. Read input from stdin as JSON.
-- **Both**: reference `the Familiar folder` via the `PERSONA_HOME` env var or `${CLAUDE_PROJECT_DIR}` in command strings.
+- **Skills**: SKILL.md with frontmatter (`name`, `description`) + a markdown body one page or less.
+- **Hooks**: pure-Python stdlib only. No venv on the customer machine. Read input from stdin as JSON.
+- **Paths**: hooks resolve the pack folder via `CLAUDE_PROJECT_DIR`, falling back to `~/Familiar`.
 
-## Iteration
+## How this evolves
 
-Pack iteration happens from your actual usage friction over the next 7 days. As they hit a use case the v1 bundle does not cover, the relevant skill or hook gets built from the v1 template, tested, and rsynced to their `.claude/` via the Tailscale upgrade mechanism.
-
-The full bundle does NOT ship on day 1. The 2 shipped skills + 1 shipped hook are the canonical templates from which the rest are forked when use cases justify them.
+EcodiaOS ships improvements to the upstream template (`EcodiaCode/familiar-starter`); your pack pulls them via the pack-update skill. Gaps you hit go to `knowledge/pack-feedback.md` (see self-improve) and the fix arrives upstream for every Familiar at once.
 
 ## Why project-scoped, not global
 
-Global skills at `~/.claude/skills/` would apply to every Claude Code session on your Mac, even ones unrelated to Familiar. Project-scoped keeps the pack self-contained, prevents collision with any other Claude Code use they have, and means a Tailscale rsync to their `.claude/` propagates updates cleanly with zero global-state mutation.
+Global skills at `~/.claude/skills/` would apply to every Claude Code session on the machine, even ones unrelated to Familiar. Project-scoped keeps the pack self-contained, avoids collisions, and means a clean `git pull` propagates updates with zero global-state mutation.
