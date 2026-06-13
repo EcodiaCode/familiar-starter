@@ -1,0 +1,71 @@
+# Customer-generated state. Lives in `origin` (her private repo) only.
+# Never tracked by the shared `upstream` template.
+
+# Credentials - never committed, ever, anywhere
+.creds/
+*.pem
+*.key
+*-credentials.json
+google-sa.json
+
+# Customer's accumulated knowledge corpus (her live, growing state)
+# These are populated by Familiar during bootstrap and through ongoing work.
+# They get committed to her private `origin` repo for backup but never to `upstream`.
+knowledge/about-*.md
+knowledge/persona-voice.md
+knowledge/weekly-shape.md
+knowledge/systems.md
+knowledge/authority-and-hard-stops.md
+knowledge/pilot-goals.md
+knowledge/pilot-feedback.md
+knowledge/learned-rules.md
+knowledge/mistakes.md
+knowledge/docs/
+knowledge/people/
+knowledge/clients/
+knowledge/cdp-recipes/
+
+# Voice profile + samples (per-customer)
+voice/samples/
+voice/profile.md
+voice/scorer.py
+voice/banned-vocab.md
+voice/drift-targets.md
+
+# Episodes (daily session logs)
+episodes/
+
+# Routines local cache
+routines/cache/
+
+# Onboarding transcripts (private)
+onboarding/
+
+# Live status board (template stays as status-board.template.md in upstream)
+status-board.md
+
+# Customer's CLAUDE.md is generated from CLAUDE.template.md at install time
+# It has customer-specific name + persona name baked in; do not track in upstream
+CLAUDE.md
+
+# familiar-core MCP server runtime (built locally, not synced)
+familiar-core/node_modules/
+familiar-core/data/
+familiar-core/*.log
+
+# OS + editor cruft
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+
+# Voice score sidecar (transient)
+.claude/.voice-score-sidecar
+
+# Scratch space
+scratch/
+tmp/
+*.bak
+
+# To force-include something the patterns above would block, use git add -f
