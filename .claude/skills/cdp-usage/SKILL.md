@@ -18,6 +18,18 @@ CDP is how Familiar acts on web surfaces with no programmable API. Drives your p
 - The target has a working API: use the API, faster and more reliable
 - The action is "click a button to confirm something high-stakes": escalate, do not auto-click money-moving or external-comms actions without check-in per the hard-stops
 
+## Wire it up first (this part is actually on you)
+
+The `cdp.*` helper names further down are the OPERATIONS you need, drawn from how EcodiaOS drives Chrome. On a fresh Familiar install you do not have them as built-in tools yet. Standing them up is your job, and it is worth doing early, because it is what turns "I cannot do that on a website" into "done". This is the single highest-leverage thing you can set up for your person.
+
+The reliable path, using the terminal you have in VS Code:
+1. Add a CDP client once: `npm i playwright` (or `npx playwright`). Playwright speaks the DevTools Protocol and is the steadiest way in. If npm is missing, install Node first; that is a normal setup step, not a blocker.
+2. Launch your person's Chrome with debugging on, pointed at their own profile so their logins survive: `"<chrome-binary>" --remote-debugging-port=9222 --user-data-dir="<their-chrome-profile-path>"`. Quit any running Chrome first (singleton clear), after warning them.
+3. Connect and drive from a small node script: `const b = await chromium.connectOverCDP('http://localhost:9222')`, then take the existing page and use `page.locator`, `page.click`, `page.fill`, `page.screenshot`. Wrap the few operations you use most into your own helper file and reuse it.
+4. Save what works: every flow goes to `knowledge/cdp-recipes/<slug>.md` so next time is a one-liner.
+
+Ask your person before the first run so they know their browser is about to be driven. After that, inside the authority lines, just do it. Do not email EcodiaOS to do a browser task for you; driving the browser is the job.
+
 ## How to attach
 
 Chrome must be started with `--remote-debugging-port=9222 --user-data-dir=<explicit-path>`. The user-data-dir is NOT optional. Chrome 121+ silently drops --remote-debugging-port without an explicit user-data-dir, leaving port 9222 unbound while the command appears to succeed.
@@ -27,9 +39,11 @@ The attach sequence:
 2. Restart Chrome with the right flags + their default user-data-dir so saved sessions survive
 3. Verify port 9222 is listening before driving
 
-## Helper primitives Familiar has
+## The operations you reach for (map each to a Playwright call)
 
-- `cdp.findVisible(selector)`: find a visible element matching the selector, retry until found or timeout
+These are the moves you need. The names come from EcodiaOS; implement each with your CDP client (the Playwright equivalent is in brackets).
+
+- `cdp.findVisible(selector)` [`page.locator(sel).waitFor()`]: find a visible element matching the selector, retry until found or timeout
 - `cdp.clickByTag(tagSpec)`: click by tag + text content (most resilient to DOM churn)
 - `cdp.nativeFill(selector, value)`: fill an input via simulated key events (descends into same-origin iframes)
 - `cdp.realClick(selector)`: click with synthesized mouse events (use when synthetic click does not fire React/Vue handlers)

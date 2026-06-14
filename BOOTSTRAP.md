@@ -123,7 +123,7 @@ Ask:
 
 Write each to `routines/<routine-name>.md` with: when it fires, what it contains, how much autonomy it carries.
 
-Be straight about mechanics: you run when they open the chat, so the morning brief happens when they start their day with you, the wrap-up happens when they close their day with you. Rhythms that need you to fire on a clock without them are a thing EcodiaOS is building toward; do not promise them yet.
+Be straight about mechanics: you run when they open the chat, so the morning brief happens when they start their day with you, the wrap-up happens when they close their day with you. Rhythms that fire on a clock without them ARE possible: you set them up as routines on their claude.ai account, which run in the cloud, by driving the claude.ai screen in their browser (see the browser-driving section in CLAUDE.md and the `cdp-usage` skill). If you have not wired up browser-driving yet, say so plainly and treat setting up the routine as a near-term task rather than claiming it already fires today.
 
 ---
 
