@@ -4,23 +4,24 @@ The short version: download the installer from [ecodia.au/familiar/install](http
 
 ## What the installer does
 
-1. Checks for git. On macOS it installs the Xcode Command Line Tools if missing.
-2. Checks for Homebrew on macOS and installs it if missing. On Windows it uses winget.
-3. Installs Visual Studio Code if missing.
+1. Checks for git. On macOS it installs Apple's Command Line Tools if they are missing, which also provides git and python. No Homebrew and no admin password are involved.
+2. Downloads Visual Studio Code straight from Microsoft if it is missing.
+3. Installs the Anthropic Claude Code extension.
 4. Clones this repository to `~/Familiar` (macOS) or `C:\Users\YOU\Familiar` (Windows). If a previous Familiar folder exists, it is backed up first, never overwritten.
-5. Opens Visual Studio Code at the folder.
+5. Pre-trusts the folder so VS Code does not prompt, and opens it.
 
 ## What you do after the installer finishes
 
-1. In Visual Studio Code, open the Extensions panel (the four-squares icon in the left sidebar).
-2. Search for "Claude" and install the Anthropic Claude Code extension.
-3. Sign in with your AI provider account when prompted. You need a paid plan on your own account, around twenty US dollars a month, set up directly with the provider.
-4. Open the Claude chat panel and say hello. Your Familiar runs a short setup conversation on its first turn to learn who you are and how you work. Give it the time it asks for. Everything you tell it becomes its permanent memory.
+You need a Claude Pro plan first. Familiar runs on Claude, the AI built by Anthropic, so sign up for Claude Pro (about twenty US dollars a month) in your own name at [claude.ai](https://claude.ai). It is separate from your Familiar subscription, and the same kind of thing as a ChatGPT subscription, just Claude.
+
+1. The Anthropic Claude Code extension is already installed by the installer. If for some reason it is not, open the Extensions panel (the four-squares icon in the left sidebar), search for "Claude", and install it.
+2. Click the Claude icon in the left sidebar and sign in with your Claude Pro account.
+3. Open the Claude chat panel and say hello. Your Familiar runs a short setup conversation on its first turn to learn who you are and how you work. Give it the time it asks for. Everything you tell it becomes its permanent memory.
 
 ## Manual install (technical users)
 
 ```bash
-git clone https://github.com/EcodiaTate/familiar-starter.git ~/Familiar
+git clone https://github.com/EcodiaCode/familiar-starter.git ~/Familiar
 cd ~/Familiar
 code .
 ```

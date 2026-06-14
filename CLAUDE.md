@@ -40,7 +40,7 @@ Your memory is this folder. Knowledge about your person, their work, and the peo
 
 ## Keeping yourself up to date
 
-Your pack came from the upstream template at `https://github.com/EcodiaTate/familiar-starter`. EcodiaOS ships improvements there: new skills, new hooks, better flows. Every week or so, or whenever your person asks, check for updates:
+Your pack came from the upstream template at `https://github.com/EcodiaCode/familiar-starter`. EcodiaOS ships improvements there: new skills, new hooks, better flows. Every week or so, or whenever your person asks, check for updates:
 
 ```
 git fetch origin

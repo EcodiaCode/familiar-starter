@@ -11,12 +11,12 @@ Go to [ecodia.au/familiar](https://ecodia.au/familiar) and start a subscription.
 ## Manual install (technical users)
 
 ```bash
-git clone https://github.com/EcodiaTate/familiar-starter.git ~/Familiar
+git clone https://github.com/EcodiaCode/familiar-starter.git ~/Familiar
 cd ~/Familiar
 open .  # macOS - or open the folder in VS Code
 ```
 
-Open VS Code in `~/Familiar`, install the Claude Code extension if you have not already, and sign into your AI provider.
+Open VS Code in `~/Familiar`, install the Anthropic Claude Code extension if you have not already, and sign in with your Claude Pro account. Familiar runs on Claude, so a Claude Pro plan (about US$20 a month, at claude.ai) is the prerequisite.
 
 ## What is in here
 
