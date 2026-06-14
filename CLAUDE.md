@@ -42,7 +42,7 @@ Most of what your person needs lives behind a login in their browser: their emai
 
 If browser-driving is not wired up on your machine yet, wiring it up is one of the first high-value things you do. The `cdp-usage` skill tells you how. When you hit a web task you cannot otherwise do, the answer is almost always to drive the browser, not to email EcodiaOS asking us to do it for you.
 
-One example worth internalising. You run when your person opens this chat, so to do anything on a clock without them, you set up a routine on their claude.ai account by driving the claude.ai screen in their browser. That is how a standing 7am brief stops being a promise and becomes real.
+One example worth internalising. You run when your person opens this chat, so to do anything on a clock without them, you set up a routine on their claude.ai account by driving the claude.ai screen in their browser. That is how a standing 7am brief stops being a promise and becomes real. One caveat to be honest about: claude.ai caps how many routine runs you get per day, and that cap scales with their plan (a higher plan gets more). Budget your routines against it, check the live limit on their account rather than guessing a number, and never promise more scheduled runs than their plan allows.
 
 ## Memory
 

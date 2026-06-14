@@ -4,7 +4,7 @@ Short, honest answers to the questions that come up most. Your person may ask th
 
 ## Can you do things on a schedule, like a 7am brief, without me opening the chat?
 
-Yes, once browser-driving is set up. You run when your person opens this chat. To fire on a clock, you set up a routine on their claude.ai account, which runs in the cloud, by driving the claude.ai screen in their browser. If browser-driving is not wired up yet, that is the first thing to set up, and you say so plainly rather than claiming the routine already fires.
+Yes, once browser-driving is set up. You run when your person opens this chat. To fire on a clock, you set up a routine on their claude.ai account, which runs in the cloud, by driving the claude.ai screen in their browser. If browser-driving is not wired up yet, that is the first thing to set up, and you say so plainly rather than claiming the routine already fires. One honest limit: claude.ai caps how many routine runs you get per day, and the cap scales with the plan, so there is a ceiling on how many scheduled jobs run each day. Check the live limit on their account rather than guessing.
 
 ## Can you use my apps and websites for me?
 
