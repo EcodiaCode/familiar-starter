@@ -1,0 +1,71 @@
+{
+  "_comment": "Keyword reminders for your Familiar. This is data, not code: edit it to add your own triggers, no Python needed. Each trigger has: skill (a unique name, used for dedup), label (optional, the tag shown in brackets; defaults to SKILL-TRIGGER), built (true once the thing exists), keywords (lowercase words or short phrases that fire it, matched on word boundaries), and reminder (the line your Familiar sees when a keyword matches). These nudges exist so your Familiar actually reaches for the right skill in the moment, instead of improvising.",
+  "triggers": [
+    {
+      "skill": "status-board-update",
+      "built": true,
+      "keywords": ["status board", "the board", "my plate", "what am i working on", "where are we with", "priorities", "outstanding", "to-do", "to do", "todo", "task list", "what's pending", "update the board", "still open", "what's left"],
+      "reminder": "Keep the status board absolutely current. Read status-board.md before answering anything about active work, and the moment a tracked client, project, task, or thread changes state, update its row the same turn (move resolved rows to archived). Use the status-board-update skill. A stale board is worse than none."
+    },
+    {
+      "skill": "email-triage",
+      "built": true,
+      "keywords": ["my inbox", "my email", "new mail", "unread", "any emails", "triage", "reply to", "sort my mail", "draft a reply"],
+      "reminder": "This is inbox work. Use the email-triage skill, which works through your claude.ai mail connector: sort what needs them, draft the replies that do not, and surface anything load-bearing. Read the relevant person note before drafting anything addressed to someone."
+    },
+    {
+      "skill": "daily-brief",
+      "built": true,
+      "keywords": ["morning brief", "brief me", "start my day", "what's on today", "what's happening today", "good morning"],
+      "reminder": "Use the daily-brief skill: read the status board, calendar, and inbox, and give one tight brief of what matters today."
+    },
+    {
+      "skill": "weekly-review",
+      "built": true,
+      "keywords": ["weekly review", "wrap the week", "this week", "close the week", "week ahead"],
+      "reminder": "Use the weekly-review skill: sweep the status board, name what moved and what stalled, and set up the week ahead."
+    },
+    {
+      "skill": "cdp-usage",
+      "built": true,
+      "keywords": ["linkedin", "log in", "log into", "sign in to", "the website", "the portal", "online form", "fill out the", "the dashboard", "browser", "open chrome", "on the web", "their site"],
+      "reminder": "Driving the browser is your real power. When a task lives on a website with no API, use the cdp-usage skill to drive Chrome: find the element, fill it with real key events, click, and confirm with a screenshot. Work in the background and never steal your person's screen."
+    },
+    {
+      "skill": "connector-setup",
+      "built": true,
+      "keywords": ["connect", "new connector", "gmail connector", "calendar connector", "set up a connection", "add a connector", "link my"],
+      "reminder": "Use the connector-setup skill to walk your person through the claude.ai web path for a new connector (Settings then Connectors, then a window reload here). Never tell them to run command-line tooling."
+    },
+    {
+      "skill": "voice-capture",
+      "built": true,
+      "keywords": ["my writing", "sound like me", "write as me", "writing samples", "my voice", "in my voice"],
+      "reminder": "Use the voice-capture skill to collect their writing samples and distil how they actually write into a working voice profile, before you publish anything under their name."
+    },
+    {
+      "skill": "self-improve",
+      "built": true,
+      "keywords": ["you keep", "that was slow", "you got that wrong", "do better", "you missed", "improve yourself"],
+      "reminder": "Use the self-improve skill: capture what slowed you down or what you got wrong, codify the fix as a rule, so the same friction does not repeat."
+    },
+    {
+      "skill": "pattern-codify",
+      "built": true,
+      "keywords": ["remember this", "from now on", "always", "never", "i prefer", "stop doing"],
+      "reminder": "Your person may be stating a durable rule. Use the pattern-codify skill to file it in your knowledge corpus this same turn."
+    },
+    {
+      "skill": "give-feedback",
+      "built": true,
+      "keywords": ["feature request", "i wish you could", "this is broken", "bug", "feedback", "ask ecodia", "report this", "suggestion", "is it possible to", "i need help with"],
+      "reminder": "If your person wants a feature you do not have, hits something broken, or asks how you work in a way your own docs do not answer, use the give-feedback skill to send it to the EcodiaOS team at code@ecodia.au. Do not invent a capability or a roadmap; pass the real request through."
+    },
+    {
+      "skill": "pack-update",
+      "built": true,
+      "keywords": ["pull updates", "check for updates", "new doctrine", "pack update"],
+      "reminder": "Use the pack-update skill to fetch upstream doctrine safely."
+    }
+  ]
+}
