@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-end-of-session-episode.py - Stop hook for {{PERSONA_NAME}}.
+end-of-session-episode.py - Stop hook for {{FAMILIAR_NAME}}.
 
 Fires when a Claude Code session ends. If the session was substantive
 (produced file changes, status-board updates, or outbound drafts), writes
@@ -25,7 +25,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-PERSONA_HOME = Path(os.environ.get("PERSONA_HOME", str(Path(os.environ.get("CLAUDE_PROJECT_DIR", str(Path.home() / "Familiar"))))))
+FAMILIAR_HOME = Path(os.environ.get("FAMILIAR_HOME", str(Path(os.environ.get("CLAUDE_PROJECT_DIR", str(Path.home() / "Familiar"))))))
 
 
 def aest_today() -> str:
@@ -77,7 +77,7 @@ def main():
         payload = {}
 
     if not is_substantive(payload):
-        return  # silent — nothing worth recording
+        return  # silent - nothing worth recording
 
     files_modified = payload.get("files_modified", [])
     tool_calls = payload.get("tool_calls", [])
@@ -116,7 +116,7 @@ def main():
         entry.append(f"- Voice substrate touched: {len(voice_writes)}")
 
     # Write to the episode file
-    episodes_dir = PERSONA_HOME / "episodes"
+    episodes_dir = FAMILIAR_HOME / "episodes"
     episodes_dir.mkdir(parents=True, exist_ok=True)
     episode_file = episodes_dir / f"{aest_today()}.md"
 

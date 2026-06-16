@@ -97,6 +97,6 @@ This becomes the durable record. Tomorrow's session knows what version of the pa
 
 ## Why this matters
 
-The persona-pack evolves continuously at EcodiaOS. New skills, refined hooks, doctrine patches land on the template repo weekly. Without a self-update mechanism, your Familiar falls behind and the pack they paid for stops being the pack we ship. The git-pull-from-upstream model lets them stay current with one command, without losing the knowledge corpus they have accumulated.
+The familiar-pack evolves continuously at EcodiaOS. New skills, refined hooks, doctrine patches land on the template repo weekly. Without a self-update mechanism, your Familiar falls behind and the pack they paid for stops being the pack we ship. The git-pull-from-upstream model lets them stay current with one command, without losing the knowledge corpus they have accumulated.
 
 Her data is hers and stays in `origin`. The pack is shared and flows from `upstream`. The two never collide because of the gitignore boundary.

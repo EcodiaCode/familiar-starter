@@ -21,8 +21,8 @@ import os
 import sys
 from pathlib import Path
 
-PERSONA_HOME = Path(os.environ.get("PERSONA_HOME", str(Path.home() / "Familiar")))
-SIDECAR_PATH = PERSONA_HOME / ".claude" / ".voice-score-sidecar"
+FAMILIAR_HOME = Path(os.environ.get("FAMILIAR_HOME", str(Path.home() / "Familiar")))
+SIDECAR_PATH = FAMILIAR_HOME / ".claude" / ".voice-score-sidecar"
 
 # Universal bans, apply even before voice profile is locked
 UNIVERSAL_BANNED_VOCAB = [
@@ -71,7 +71,7 @@ def is_outbound_draft(tool_input: dict) -> bool:
 def load_banned_vocab() -> list:
     """Load your custom banned vocab + add universal bans."""
     custom = []
-    banned_path = PERSONA_HOME / "voice" / "banned-vocab.md"
+    banned_path = FAMILIAR_HOME / "voice" / "banned-vocab.md"
     if banned_path.exists():
         for line in banned_path.read_text().splitlines():
             stripped = line.lstrip("- ").strip()

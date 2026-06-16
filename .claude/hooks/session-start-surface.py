@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-session-start-surface.py - SessionStart hook for {{PERSONA_NAME}}.
+session-start-surface.py - SessionStart hook for {{FAMILIAR_NAME}}.
 
-Fires when a new Claude Code session starts in PERSONA_HOME. Reads the
-customer's active substrate and surfaces the load-bearing facts so {{PERSONA_NAME}}
+Fires when a new Claude Code session starts in FAMILIAR_HOME. Reads the
+customer's active substrate and surfaces the load-bearing facts so {{FAMILIAR_NAME}}
 opens with awareness of what's currently active.
 
 What it surfaces (when present):
@@ -22,7 +22,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-PERSONA_HOME = Path(os.environ.get("PERSONA_HOME", str(Path(os.environ.get("CLAUDE_PROJECT_DIR", str(Path.home() / "Familiar"))))))
+FAMILIAR_HOME = Path(os.environ.get("FAMILIAR_HOME", str(Path(os.environ.get("CLAUDE_PROJECT_DIR", str(Path.home() / "Familiar"))))))
 
 
 def read_safe(path: Path) -> str:
@@ -73,7 +73,7 @@ def main():
     surfacing = []
 
     # Status board P1 + P2
-    status_board = read_safe(PERSONA_HOME / "status-board.md")
+    status_board = read_safe(FAMILIAR_HOME / "status-board.md")
     rows = parse_priority_rows(status_board)
     if "P1" in rows:
         surfacing.append(f"[STATUS-BOARD] P1 ({len(rows['P1'])} rows): " + "; ".join(rows["P1"][:3]))
@@ -81,13 +81,13 @@ def main():
         surfacing.append(f"[STATUS-BOARD] P2 ({len(rows['P2'])} rows): " + "; ".join(rows["P2"][:3]))
 
     # Open install step
-    install_log = read_safe(PERSONA_HOME / "onboarding" / "install-log.md")
+    install_log = read_safe(FAMILIAR_HOME / "onboarding" / "install-log.md")
     open_step = find_open_install_step(install_log)
     if open_step:
         surfacing.append(f"[INSTALL-PENDING] Last unfinished step: {open_step}")
 
     # Calendar cache (lands when Routines wire up)
-    cal_cache = read_safe(PERSONA_HOME / "routines" / "cache" / "calendar-today.json")
+    cal_cache = read_safe(FAMILIAR_HOME / "routines" / "cache" / "calendar-today.json")
     if cal_cache:
         try:
             data = json.loads(cal_cache)
@@ -100,7 +100,7 @@ def main():
             pass
 
     # Inbox urgent flags
-    inbox_cache = read_safe(PERSONA_HOME / "routines" / "cache" / "inbox-flags.json")
+    inbox_cache = read_safe(FAMILIAR_HOME / "routines" / "cache" / "inbox-flags.json")
     if inbox_cache:
         try:
             data = json.loads(inbox_cache)
@@ -113,7 +113,7 @@ def main():
             pass
 
     if not surfacing:
-        return  # silent — nothing to surface
+        return  # silent - nothing to surface
 
     print("\n".join(surfacing))
 

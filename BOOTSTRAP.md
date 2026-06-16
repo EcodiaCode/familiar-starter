@@ -38,7 +38,7 @@ Ask:
 - "If yes to publishing as you: which surfaces specifically?"
 - "Are there contexts where I should NEVER write as you? Personal, sensitive, certain people, anything?"
 
-Write to `knowledge/persona-voice.md`. Read back the voice description and the surface list. Confirm.
+Write to `knowledge/familiar-voice.md`. Read back the voice description and the surface list. Confirm.
 
 ---
 

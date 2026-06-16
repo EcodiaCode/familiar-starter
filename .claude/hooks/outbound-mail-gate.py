@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-outbound-mail-gate.py - PreToolUse hook on Gmail send for {{PERSONA_NAME}}.
+outbound-mail-gate.py - PreToolUse hook on Gmail send for {{FAMILIAR_NAME}}.
 
 Fires BEFORE any gmail_send tool call. Composite gate covering:
   1. Recipient check: recipient must be on the authorized-contact list
@@ -27,7 +27,7 @@ import re
 import sys
 from pathlib import Path
 
-PERSONA_HOME = Path(os.environ.get("PERSONA_HOME", str(Path(os.environ.get("CLAUDE_PROJECT_DIR", str(Path.home() / "Familiar"))))))
+FAMILIAR_HOME = Path(os.environ.get("FAMILIAR_HOME", str(Path(os.environ.get("CLAUDE_PROJECT_DIR", str(Path.home() / "Familiar"))))))
 
 # Universal bans (always apply, even before voice profile is locked)
 EM_DASH = "—"
@@ -53,7 +53,7 @@ def load_authorized_contacts() -> set:
     """Build the authorized-contact set from people/ + clients/ knowledge files."""
     contacts = set()
     for subdir in ("people", "clients"):
-        d = PERSONA_HOME / "knowledge" / subdir
+        d = FAMILIAR_HOME / "knowledge" / subdir
         if not d.exists():
             continue
         for f in d.glob("*.md"):
@@ -66,7 +66,7 @@ def load_authorized_contacts() -> set:
 
 def load_hard_stops() -> list:
     """Return list of hard-stop substrings from the hard-stops doctrine file."""
-    text = read_safe(PERSONA_HOME / "knowledge" / "authority-and-hard-stops.md")
+    text = read_safe(FAMILIAR_HOME / "knowledge" / "authority-and-hard-stops.md")
     if not text:
         return []
     # Look for lines flagged "external comm forbidden" or similar
@@ -79,7 +79,7 @@ def load_hard_stops() -> list:
 
 def load_banned_vocab() -> list:
     """Customer-specific banned vocab from voice/banned-vocab.md."""
-    text = read_safe(PERSONA_HOME / "voice" / "banned-vocab.md")
+    text = read_safe(FAMILIAR_HOME / "voice" / "banned-vocab.md")
     return [line.lstrip("- ").strip() for line in text.splitlines() if line.startswith("-")]
 
 

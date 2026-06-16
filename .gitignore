@@ -12,7 +12,7 @@ google-sa.json
 # These are populated by Familiar during bootstrap and through ongoing work.
 # They get committed to the private `origin` repo for backup but never to `upstream`.
 knowledge/about-*.md
-knowledge/persona-voice.md
+knowledge/familiar-voice.md
 knowledge/weekly-shape.md
 knowledge/systems.md
 knowledge/authority-and-hard-stops.md
@@ -45,7 +45,7 @@ onboarding/
 status-board.md
 
 # Customer's CLAUDE.md is generated from CLAUDE.template.md at install time
-# It has customer-specific name + persona name baked in; do not track in upstream
+# It has customer-specific name + familiar name baked in; do not track in upstream
 CLAUDE.md
 
 # familiar-core MCP server runtime (built locally, not synced)
