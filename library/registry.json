@@ -1,0 +1,222 @@
+{
+  "_comment": "The Familiar skills library. This lists every skill your Familiar has, both the always-on active set and the wider catalogue it can pull from on demand. The skill-library skill reads this file to show you the library and to add or remove skills. Each entry: name (matches the folder under .claude/skills or library/skills), category, summary (one line), triggers (phrases that fire it), location (active = auto-loaded now, library = pullable). Keep location honest: it must match where the folder actually lives.",
+  "skills": [
+    {
+      "name": "connector-setup",
+      "category": "comms",
+      "summary": "Walk your person through connecting Gmail, Calendar, and Drive on claude.ai.",
+      "triggers": ["connect", "new connector", "gmail connector", "calendar connector", "set up a connection", "add a connector", "link my"],
+      "location": "active"
+    },
+    {
+      "name": "daily-brief",
+      "category": "planning",
+      "summary": "Open the day with one tight brief of what matters: board, calendar, inbox.",
+      "triggers": ["morning brief", "brief me", "start my day", "what's on today", "what's happening today", "good morning"],
+      "location": "active"
+    },
+    {
+      "name": "email-triage",
+      "category": "comms",
+      "summary": "Sort the inbox into needs-them, drafted, and noise, never sending unapproved.",
+      "triggers": ["my inbox", "my email", "new mail", "unread", "any emails", "triage", "reply to", "sort my mail", "draft a reply"],
+      "location": "active"
+    },
+    {
+      "name": "voice-capture",
+      "category": "content",
+      "summary": "Collect writing samples and build a working voice profile so you sound like them.",
+      "triggers": ["my writing", "sound like me", "write as me", "writing samples", "my voice", "in my voice"],
+      "location": "active"
+    },
+    {
+      "name": "weekly-review",
+      "category": "planning",
+      "summary": "Sweep the board weekly, name what moved and what stalled, set next week.",
+      "triggers": ["weekly review", "wrap the week", "this week", "close the week", "week ahead"],
+      "location": "active"
+    },
+    {
+      "name": "self-improve",
+      "category": "planning",
+      "summary": "Capture friction and codify the fix so the same problem does not repeat.",
+      "triggers": ["you keep", "that was slow", "you got that wrong", "do better", "you missed", "improve yourself"],
+      "location": "active"
+    },
+    {
+      "name": "pattern-codify",
+      "category": "planning",
+      "summary": "File a durable rule the moment your person states one.",
+      "triggers": ["remember this", "from now on", "always", "never", "i prefer", "stop doing"],
+      "location": "active"
+    },
+    {
+      "name": "status-board-update",
+      "category": "planning",
+      "summary": "Maintain status-board.md as the single source of truth for active work.",
+      "triggers": ["status board", "the board", "my plate", "what am i working on", "where are we with", "priorities", "outstanding", "update the board"],
+      "location": "active"
+    },
+    {
+      "name": "pack-update",
+      "category": "planning",
+      "summary": "Pull upstream pack improvements safely, never touching your person's files.",
+      "triggers": ["pull updates", "check for updates", "new doctrine", "pack update"],
+      "location": "active"
+    },
+    {
+      "name": "cdp-usage",
+      "category": "web",
+      "summary": "Drive Chrome for browser-only surfaces in their signed-in session.",
+      "triggers": ["linkedin", "log in", "the website", "the portal", "online form", "fill out the", "the dashboard", "browser", "open chrome", "on the web"],
+      "location": "active"
+    },
+    {
+      "name": "give-feedback",
+      "category": "planning",
+      "summary": "Pass a real feature request or bug to the EcodiaOS team when you cannot solve it.",
+      "triggers": ["feature request", "i wish you could", "this is broken", "bug", "feedback", "ask ecodia", "report this", "suggestion"],
+      "location": "active"
+    },
+    {
+      "name": "skill-library",
+      "category": "planning",
+      "summary": "Browse the wider skills library and add or remove skills on demand.",
+      "triggers": ["show me the library", "what skills do you have", "add the", "pull in the", "remove the", "update the library", "your skills"],
+      "location": "active"
+    },
+    {
+      "name": "meeting-prep",
+      "category": "calendar",
+      "summary": "Build a tight prep pack before a meeting: who, what, history, three things to have ready.",
+      "triggers": ["prep me for", "prep for my meeting", "meeting with", "who am i meeting", "before the call with", "get me ready for"],
+      "location": "library"
+    },
+    {
+      "name": "calendar-triage",
+      "category": "calendar",
+      "summary": "Sweep the calendar for clashes, gaps, back-to-backs, and missing links.",
+      "triggers": ["check my calendar", "my schedule", "any clashes", "double booked", "free time", "gaps in my day", "tidy my calendar"],
+      "location": "library"
+    },
+    {
+      "name": "inbox-zero",
+      "category": "comms",
+      "summary": "Drive a full inbox backlog down to zero in one focused session.",
+      "triggers": ["inbox zero", "clear my inbox", "drowning in email", "email backlog", "clean out my mail", "deal with all my email"],
+      "location": "library"
+    },
+    {
+      "name": "contact-followup",
+      "category": "comms",
+      "summary": "Track who owes a reply and chase quiet threads at the right moment.",
+      "triggers": ["follow up", "chase up", "who hasn't replied", "haven't heard back", "waiting on a reply", "circle back", "nudge them"],
+      "location": "library"
+    },
+    {
+      "name": "intro-draft",
+      "category": "comms",
+      "summary": "Draft a warm double-opt-in introduction between two people they know.",
+      "triggers": ["introduce me to", "connect these two", "make an intro", "warm intro", "put me in touch", "connect me with"],
+      "location": "library"
+    },
+    {
+      "name": "doc-draft",
+      "category": "docs",
+      "summary": "Draft a memo, one-pager, or letter from a short brief in their voice.",
+      "triggers": ["draft me a", "write up a", "put together a doc", "write a memo", "draft a letter", "one pager", "write a document"],
+      "location": "library"
+    },
+    {
+      "name": "proposal-draft",
+      "category": "docs",
+      "summary": "Draft a client proposal or quote: scope, deliverables, timeline, price, terms.",
+      "triggers": ["draft a proposal", "write a proposal", "quote this", "write up a scope", "statement of work", "send a quote", "proposal for"],
+      "location": "library"
+    },
+    {
+      "name": "note-summarize",
+      "category": "docs",
+      "summary": "Turn raw notes or a transcript into decisions and actions, captured to the right place.",
+      "triggers": ["summarise this", "summarize this", "what were the actions", "tidy up these notes", "meeting notes", "action items from", "recap this"],
+      "location": "library"
+    },
+    {
+      "name": "research-brief",
+      "category": "research",
+      "summary": "Research a topic, person, or company and return a tight cited brief.",
+      "triggers": ["research", "find out about", "background on", "look into", "dig into", "due diligence on", "brief me on"],
+      "location": "library"
+    },
+    {
+      "name": "call-prep",
+      "category": "research",
+      "summary": "Prep a phone or video call with a short script: goal, points, objections, close.",
+      "triggers": ["prep me for this call", "what do i say to", "before the call", "phone call with", "talking points for", "sales call prep"],
+      "location": "library"
+    },
+    {
+      "name": "invoice-chase",
+      "category": "finance",
+      "summary": "Track what they are owed and chase overdue invoices at the right cadence.",
+      "triggers": ["who owes me", "chase that invoice", "overdue invoice", "unpaid invoices", "outstanding payments", "follow up on payment", "receivables"],
+      "location": "library"
+    },
+    {
+      "name": "expense-capture",
+      "category": "finance",
+      "summary": "Turn receipts and transactions into a clean categorised expense record.",
+      "triggers": ["log these expenses", "sort my receipts", "track this expense", "expense report", "categorise my spending", "tax time", "claimable expenses"],
+      "location": "library"
+    },
+    {
+      "name": "weekly-plan",
+      "category": "planning",
+      "summary": "Build the week ahead: the few things that matter mapped against real capacity.",
+      "triggers": ["plan my week", "what should i focus on", "week ahead", "set up my week", "priorities for the week", "map out my week"],
+      "location": "library"
+    },
+    {
+      "name": "travel-plan",
+      "category": "planning",
+      "summary": "Plan a trip end to end: flights, stays, transport, itinerary, calendar holds.",
+      "triggers": ["plan a trip", "sort my travel", "book my flights", "travel to", "itinerary for", "plan my journey", "trip to"],
+      "location": "library"
+    },
+    {
+      "name": "content-repurpose",
+      "category": "content",
+      "summary": "Turn one finished piece into several formats in their voice, ready to schedule.",
+      "triggers": ["repurpose this", "turn this into", "get more out of", "spin this into", "cut this into posts", "make content from"],
+      "location": "library"
+    },
+    {
+      "name": "newsletter-draft",
+      "category": "content",
+      "summary": "Draft a newsletter issue from recent activity: subject options, structure, body.",
+      "triggers": ["draft my newsletter", "this week's newsletter", "write my update", "newsletter issue", "my mailing list", "monthly update email"],
+      "location": "library"
+    },
+    {
+      "name": "web-watch",
+      "category": "web",
+      "summary": "Watch a page, search, or feed for a change and tell them when it moves.",
+      "triggers": ["keep an eye on", "watch for", "tell me when this changes", "monitor", "track this page", "alert me when", "watch the price"],
+      "location": "library"
+    },
+    {
+      "name": "form-fill",
+      "category": "web",
+      "summary": "Fill a web form or application from what they gave you, shown for a final check.",
+      "triggers": ["fill out this form", "do this application", "enter this for me", "complete the form", "fill in the", "register me on", "sign up for"],
+      "location": "library"
+    },
+    {
+      "name": "crm-update",
+      "category": "web",
+      "summary": "Keep contacts and deal records current: log calls, update stages, add contacts.",
+      "triggers": ["update my crm", "log this in the pipeline", "add a contact", "update the deal", "log the call", "pipeline update"],
+      "location": "library"
+    }
+  ]
+}

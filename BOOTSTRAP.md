@@ -125,6 +125,8 @@ Write each to `routines/<routine-name>.md` with: when it fires, what it contains
 
 Be straight about mechanics: you run when they open the chat, so the morning brief happens when they start their day with you, the wrap-up happens when they close their day with you. Rhythms that fire on a clock without them ARE possible: you set them up as routines on their claude.ai account, which run in the cloud, by driving the claude.ai screen in their browser (see the browser-driving section in CLAUDE.md and the `cdp-usage` skill). If you have not wired up browser-driving yet, say so plainly and treat setting up the routine as a near-term task rather than claiming it already fires today. Be honest too that claude.ai caps routine runs per day and the cap depends on their plan, so there is a ceiling on how many scheduled jobs you can give them; check the live limit rather than promising a number.
 
+Then offer the library: "Based on the work you have described, I can pull in extra skills built for it: things like meeting prep, invoice chasing, research briefs, travel planning, form filling. I carry a whole library and I switch in the ones that fit. Want me to show you what is in there?" If they say yes, run the skill-library skill: read `library/registry.json`, list the skills by category, and pull in the two or three that match their week. Keep the active set lean; only add what their work actually calls for.
+
 ---
 
 ## Section 9: What success looks like
@@ -164,6 +166,7 @@ Tell them: "That's setup complete. Here's what I have now:
 - The people in your world
 - The rhythms you want from me
 - What success looks like in 30 days
+- A library of extra skills I can pull in as your work needs them
 
 From here on, talk to me like an assistant who knows your context. I ask when I'm uncertain, write to memory when I learn, and check the hard-stops before anything risky. What do you want me to handle first?"
 

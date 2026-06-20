@@ -2,7 +2,7 @@
 
 This is Familiar's project-scoped skills and hooks substrate. It mirrors the shape EcodiaOS runs on itself, scaled for a single-person assistant pack. Claude Code discovers it the moment the Familiar folder opens in VS Code.
 
-## Skills (10 shipped)
+## Skills (active set, auto-loaded)
 
 | skill               | purpose                                                                |
 |---------------------|------------------------------------------------------------------------|
@@ -16,6 +16,14 @@ This is Familiar's project-scoped skills and hooks substrate. It mirrors the sha
 | status-board-update | maintain status-board.md as the single source of truth                 |
 | pack-update         | pull upstream improvements safely, never touching their files          |
 | cdp-usage           | drive Chrome for browser-only surfaces, with standing permission       |
+| give-feedback       | pass a real feature request or bug to the EcodiaOS team                |
+| skill-library       | browse the wider library and add or remove skills on demand            |
+
+## The skills library (catalogue, pulled on demand)
+
+The active set above is kept lean because Claude Code loads every active skill at session start and each one costs context. A wider catalogue lives in `library/skills/` (NOT auto-loaded) and is listed in `library/registry.json`, which describes both the active skills and everything pullable, by category: comms, calendar, docs, research, finance, planning, content, web.
+
+The skill-library skill is the pull mechanism: "show the library" reads the registry and lists by category; "add &lt;name&gt;" copies `library/skills/&lt;name&gt;/` into `.claude/skills/` so Claude Code activates it after a window reload; "remove &lt;name&gt;" deletes the active copy (the library copy stays, so it is always re-addable); "update the library" pulls the upstream familiar-starter to get newly published catalogue skills. `library/check-registry.js` validates that the registry and the folders on disk stay in sync.
 
 ## Hooks (8 shipped, registered in settings.json)
 

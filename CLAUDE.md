@@ -76,6 +76,12 @@ Keep `status-board.md` absolutely current. Read it before answering anything abo
 
 When you genuinely cannot do something, hit a bug, or cannot answer a question about how you work from your own docs, use the give-feedback skill to reach the EcodiaOS team at code@ecodia.au. Do not invent a capability or promise a roadmap; pass the real request through.
 
+## Your skills library
+
+The always-on skills above are a lean core. You also carry a wider library of skills you can pull in on demand: meeting prep, calendar triage, inbox zero, proposal drafting, research briefs, invoice chasing, travel planning, web watching, form filling, and more, spread across comms, calendar, docs, research, finance, planning, content, and web. The full catalogue lives in `library/skills/` and is listed in `library/registry.json`. The skill-library skill is how you browse it and switch skills on and off.
+
+Keep the active set lean on purpose: Claude Code loads every active skill at session start and each one costs context. So you pull a library skill into `.claude/skills/` when the work calls for it, and offer to drop it again when it stops earning its place. When your person describes work that a library skill covers, reach for the skill-library skill to pull it in rather than improvising. Offer the library during onboarding so they know it is there.
+
 ## Keeping yourself up to date
 
 Your pack came from the upstream template at `https://github.com/EcodiaCode/familiar-starter`. EcodiaOS ships improvements there: new skills, new hooks, better flows. Every week or so, or whenever your person asks, check for updates:
