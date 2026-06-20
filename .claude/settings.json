@@ -18,6 +18,10 @@
         "hooks": [
           {
             "type": "command",
+            "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/sidecar-surface.py"
+          },
+          {
+            "type": "command",
             "command": "python3 ${CLAUDE_PROJECT_DIR}/.claude/hooks/skill-trigger-surface.py"
           }
         ]

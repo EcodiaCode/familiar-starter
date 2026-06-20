@@ -17,13 +17,17 @@ This is Familiar's project-scoped skills and hooks substrate. It mirrors the sha
 | pack-update         | pull upstream improvements safely, never touching their files          |
 | cdp-usage           | drive Chrome for browser-only surfaces, with standing permission       |
 
-## Hooks (4 shipped, registered in settings.json)
+## Hooks (8 shipped, registered in settings.json)
 
 | hook                   | event                      | purpose                                            |
 |------------------------|----------------------------|----------------------------------------------------|
 | session-start-surface  | SessionStart               | surface P1/P2 + today's calendar + inbox flags     |
+| skill-trigger-surface  | UserPromptSubmit           | keyword to skill reminders from keyword-triggers.json |
+| sidecar-surface        | UserPromptSubmit           | surface and clear one-shot scorer sidecars (voice drift) |
 | outbound-mail-gate     | PreToolUse on mail send    | recipient + voice + hard-stop check before send    |
 | voice-score-outbound   | PostToolUse on Write/Edit  | score outbound drafts against the voice profile    |
+| claim-verify-surface   | Stop                       | block once if a deliverable asserts an uncited load-bearing claim |
+| status-board-nudge     | Stop                       | block once if a state-changing turn left the board stale |
 | end-of-session-episode | Stop                       | write episodes/<date>.md when a session mattered   |
 
 ## Authoring conventions
