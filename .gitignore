@@ -69,3 +69,4 @@ tmp/
 *.bak
 
 # To force-include something the patterns above would block, use git add -f
+.claude/hooks/__pycache__/

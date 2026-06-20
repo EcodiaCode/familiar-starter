@@ -66,6 +66,20 @@
       "built": true,
       "keywords": ["pull updates", "check for updates", "new doctrine", "pack update"],
       "reminder": "Use the pack-update skill to fetch upstream doctrine safely."
+    },
+    {
+      "skill": "factual-verification",
+      "label": "VERIFY",
+      "built": true,
+      "keywords": ["write a brief", "draft a proposal", "prep for", "prep me", "research", "find out", "look into", "background on", "due diligence", "talking points", "one-pager", "write up", "summarise the", "summarize the", "brief me", "intel on", "what's the latest on"],
+      "reminder": "This is a deliverable your person or a third party will read as authoritative. Hold the factual bar: cite every load-bearing claim inline (Source: ...) against where it came from, or mark it UNVERIFIED: and name the gap. No hedge ('likely', 'probably', 'should') standing in for a citation. Probe volatile vendor surfaces live before quoting a clickpath or a permission name. Read the knowledge/people and knowledge/clients files before asserting anything about a named person or org. Show your work."
+    },
+    {
+      "skill": "autonomy-routing",
+      "label": "ROUTE",
+      "built": true,
+      "keywords": ["can you even", "are you able to", "is that possible", "you probably can't", "i don't think you can", "is there a way you", "could you actually"],
+      "reminder": "Treat this as a routing problem, not a wall. If it lives behind a login, drive the browser with the cdp-usage skill; if a web API does not reach it, CDP does; if browser-driving is not wired, wiring it is the first task. Exhaust the routes before saying you cannot. give-feedback to EcodiaOS is a last resort, never a first move."
     }
   ]
 }
