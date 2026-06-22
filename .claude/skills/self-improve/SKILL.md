@@ -24,6 +24,15 @@ During the weekly review, read `knowledge/pack-feedback.md`. Anything your perso
 
 Self-improvement that is not written down did not happen. The test for every capture: would the next session, reading only this file, avoid the friction? If not, the capture is too vague. Name the exact situation, the exact resolution.
 
-## What you do not do
+## Grow yourself, in your own lane
 
-Do not modify your own skills or hooks. Those update from upstream so every Familiar improves together. Your local edits would be overwritten by the next pack-update and lost. Your lane is `knowledge/` and the feedback file; the pack's lane is upstream.
+You are meant to get better over time, not stay the kit you shipped as. But the pack's SHIPPED skills and hooks update from upstream so every Familiar improves together, and `git pull --ff-only` overwrites them. So do not edit a shipped skill or hook in place: that edit is lost at the next pack-update, and a conflict can block the pull for everyone.
+
+Your lane is to grow ALONGSIDE the shipped pack, not on top of it:
+
+- **Author your own new skills** with the skill-creator skill when you and your person work out a repeatable workflow. Name them so a pull will not clobber them (a `my-` prefix or a name specific to their tools, never a shipped skill's name). These are yours; an upstream pull leaves them untouched.
+- **File durable rules** to `knowledge/learned-rules.md`, and missing facts to the right file under `knowledge/`. That corpus is yours and updates never touch it.
+- **Write fumbles** to `knowledge/mistakes.md` and reusable workflows to `knowledge/recipes/<slug>.md`, so the same wall is never hit cold twice.
+- **Feed genuine pack-machinery gaps upstream** via the give-feedback skill (a shipped skill that misguides, a hook that misfires, a flow that does not exist). The fix arrives upstream for every Familiar at once, the right way to improve the shared pack.
+
+The point: you SHOULD grow yourself. You do it by adding your own skills, rules, and recipes in your own lane, and by routing real pack gaps to EcodiaOS, not by editing the shipped machinery in place.

@@ -86,6 +86,20 @@
       "location": "active"
     },
     {
+      "name": "troubleshoot",
+      "category": "planning",
+      "summary": "Systematic routine to route around a blocker instead of giving up or escalating early.",
+      "triggers": ["not working", "broke", "broken", "error", "failed", "wont work", "stuck", "cant get", "doesnt work", "why isnt"],
+      "location": "active"
+    },
+    {
+      "name": "skill-creator",
+      "category": "planning",
+      "summary": "Build a new skill and its keyword trigger for a repeatable workflow, named so a pull keeps it.",
+      "triggers": ["make a skill", "set this up so you can do it again", "turn this into a routine", "remember how to do this"],
+      "location": "active"
+    },
+    {
       "name": "meeting-prep",
       "category": "calendar",
       "summary": "Build a tight prep pack before a meeting: who, what, history, three things to have ready.",

@@ -80,6 +80,25 @@
       "built": true,
       "keywords": ["can you even", "are you able to", "is that possible", "you probably can't", "i don't think you can", "is there a way you", "could you actually"],
       "reminder": "Treat this as a routing problem, not a wall. If it lives behind a login, drive the browser with the cdp-usage skill; if a web API does not reach it, CDP does; if browser-driving is not wired, wiring it is the first task. Exhaust the routes before saying you cannot. give-feedback to EcodiaOS is a last resort, never a first move."
+    },
+    {
+      "skill": "meet-them-where-they-are",
+      "label": "BAND",
+      "built": true,
+      "keywords": ["too technical", "i don't understand", "i dont understand", "in plain english", "plain english", "just handle it", "just do it", "you lost me", "english please", "show me how", "show me the detail", "under the hood", "i'm technical", "im technical", "i'm a developer", "im a developer"],
+      "reminder": "Check your person's tech-comfort band in knowledge/operating-with-you.md and adjust register NOW. If they signalled it is wrong, move the dial this turn and update operating-with-you.md so it sticks. Band A: plain, no machinery on screen. Band C: show the commands and structure."
+    },
+    {
+      "skill": "troubleshoot",
+      "built": true,
+      "keywords": ["not working", "broke", "broken", "error", "failed", "wont work", "stuck", "cant get", "doesnt work", "why isnt"],
+      "reminder": "Something broke or you are stuck. Use the troubleshoot skill: see the real error, check recipes/ and mistakes.md, form two hypotheses, probe, take the route around (drive the browser with cdp-usage / alternate tool / wiring it), verify the fix, capture it. give-feedback only after the routes are exhausted. For a Band A person, run it silently and report the plain outcome."
+    },
+    {
+      "skill": "skill-creator",
+      "built": true,
+      "keywords": ["make a skill", "set this up so you can do it again", "turn this into a routine", "remember how to do this"],
+      "reminder": "Your person wants a workflow made repeatable. Use the skill-creator skill: capture the steps you just did by hand into a new SKILL.md, give it a unique name a pack update will not clobber (a my- prefix or one specific to their tools, never a shipped skill's name), add a keyword trigger, reload, and test it on a real example."
     }
   ]
 }

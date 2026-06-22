@@ -18,6 +18,8 @@ This is Familiar's project-scoped skills and hooks substrate. It mirrors the sha
 | cdp-usage           | drive Chrome for browser-only surfaces, with standing permission       |
 | give-feedback       | pass a real feature request or bug to the EcodiaOS team                |
 | skill-library       | browse the wider library and add or remove skills on demand            |
+| troubleshoot        | systematic routine to route around a blocker instead of giving up      |
+| skill-creator       | build a new skill (+ trigger) for a workflow, named so a pull keeps it |
 
 ## The skills library (catalogue, pulled on demand)
 
@@ -25,11 +27,12 @@ The active set above is kept lean because Claude Code loads every active skill a
 
 The skill-library skill is the pull mechanism: "show the library" reads the registry and lists by category; "add &lt;name&gt;" copies `library/skills/&lt;name&gt;/` into `.claude/skills/` so Claude Code activates it after a window reload; "remove &lt;name&gt;" deletes the active copy (the library copy stays, so it is always re-addable); "update the library" pulls the upstream familiar-starter to get newly published catalogue skills. `library/check-registry.js` validates that the registry and the folders on disk stay in sync.
 
-## Hooks (8 shipped, registered in settings.json)
+## Hooks (9 shipped, registered in settings.json)
 
 | hook                   | event                      | purpose                                            |
 |------------------------|----------------------------|----------------------------------------------------|
 | session-start-surface  | SessionStart               | surface P1/P2 + today's calendar + inbox flags     |
+| user-profile-surface   | SessionStart               | surface the tech-comfort band so the register opens calibrated |
 | skill-trigger-surface  | UserPromptSubmit           | keyword to skill reminders from keyword-triggers.json |
 | sidecar-surface        | UserPromptSubmit           | surface and clear one-shot scorer sidecars (voice drift) |
 | outbound-mail-gate     | PreToolUse on mail send    | recipient + voice + hard-stop check before send    |

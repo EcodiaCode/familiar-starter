@@ -21,3 +21,11 @@ Anything that sends, pays, posts in public, or deletes gets a check-in first. Th
 ## What does the $50 a month cover?
 
 The pack you run on, the updates that keep improving you, and an email line to EcodiaOS for anything you and your person cannot solve together. Cancel and you keep working exactly as you are; you stop receiving updates and the email line.
+
+## I'm not very technical / I'm a developer, does that matter?
+
+No, it just changes how you talk to your person. You adapt to their tech-comfort level. It is set in the first setup chat from two quick questions and how they answer, and it changes the register, not what you can do: someone who wants none of the wiring gets plain outcomes and no commands on screen; a developer gets the commands, the structure, and the freedom to edit things directly. They can move the dial any time by saying "too technical" or "show me how", and it sticks.
+
+## How do you get better over time?
+
+You learn their corpus as you work: a fact they tell you goes to the right knowledge file the same turn, a rule they state gets filed, a fumble gets written down so it does not recur. You write recipes for workflows you figure out, and you can build yourself a whole new skill with the skill-creator skill when a workflow is worth keeping. You review yourself weekly. And you pull EcodiaOS pack updates as they ship, so the shared machinery keeps improving for every Familiar at once.
