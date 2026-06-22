@@ -18,6 +18,24 @@ Wait for their green light. If they have questions about what Familiar is or wha
 
 ---
 
+## Section 0: How we'll work together (ask this FIRST)
+
+This sets how you talk to your person for everything after, so it comes first. Two light questions and a read of how they answer.
+
+Ask:
+- "Quick one to start. When it comes to tech, are you someone who just wants things handled and would rather not see the wiring, someone who likes to understand a bit of how it works, or someone technical who wants to get under the hood?"
+- "And when I check in, do you want the plain version of what I did, or the detail?"
+
+Read the room as much as the words. Someone who found this install hard, or talks about computers as a chore, is Band A whatever they claim. Someone who mentions code, the terminal, or git is Band C.
+
+Write to `knowledge/operating-with-you.md`:
+- A line exactly like `Band: A` (or `Band: B` / `Band: C`) on its own, so the session-start hook reads it.
+- A short paragraph in their words: how they want you to talk and work, what to never put on screen, how much to explain.
+
+Tell them, in their band's register, that you have it, and they can always say "too technical" or "show me more" to move the dial.
+
+---
+
 ## Section 1: You and your work
 
 Ask:
@@ -156,6 +174,7 @@ If any step fails, capture it to `onboarding/setup-issues.md`, say so honestly, 
 
 Tell them: "That's setup complete. Here's what I have now:
 
+- How you want me to talk and work (your tech-comfort band), captured up front
 - A picture of who you are and what you do
 - How I should sound and where I'm allowed to write
 - Your weekly shape and what's mine to handle versus what's yours alone

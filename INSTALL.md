@@ -2,6 +2,12 @@
 
 The short version: download the installer from [ecodia.au/familiar/install](https://ecodia.au/familiar/install), double-click it, follow the steps. This file is the long version, for anyone who wants to see what the installer does or run the steps by hand.
 
+## If you're not technical
+
+This is the path for you, and it is the default. Download the installer, double-click it, and follow the steps. You do not need to understand any of what follows, and you will never touch a command line. The installer sets everything up, and once it opens, your Familiar runs a short setup conversation and guides you from there. The "what the installer does" and "manual install" sections below are just for the curious or for developers; skip them if you would rather not see the wiring. Your Familiar will meet you where you are.
+
+If anything looks confusing, you can stop and write to code@ecodia.au with what you saw.
+
 ## What the installer does
 
 1. Checks for git. On macOS it installs Apple's Command Line Tools if they are missing, which also provides git and python. No Homebrew and no admin password are involved.
@@ -20,13 +26,15 @@ You need a Claude Pro plan first. Familiar runs on Claude, the AI built by Anthr
 
 ## Manual install (technical users)
 
+For developers who already have git and VS Code and would rather run it by hand instead of using the double-click installer:
+
 ```bash
 git clone https://github.com/EcodiaCode/familiar-starter.git ~/Familiar
 cd ~/Familiar
 code .
 ```
 
-Then steps 1 to 4 above.
+Then do the "What you do after the installer finishes" steps above: get a Claude Pro plan, install the Claude Code extension if it is not already there, sign in, and say hello to start the setup conversation.
 
 ## Where everything lives
 
